@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300');
+
+.signupBody{
+    /* margin: 0;
+    padding-bottom: 20px;
+    font-family: 'Nunito',sans-serif; */
+    
+    color: orange;
+    background-color:black;
+}
