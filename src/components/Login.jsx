@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 const baseUrl = import.meta.env.VITE_BASE_URL
 import '../css/Submit.css'
+import NavBar from './NavBar'
+
 
 export default function Login() {
     const navigate = useNavigate()
@@ -36,11 +38,14 @@ export default function Login() {
     }
   return (
     <div>
+      <NavBar/>
     <h2>Login</h2>
     <form onSubmit={handleSubmit}>
       <input type="email" value={email} onChange={handleEmailChange} placeholder="Email" required /><br></br>
       <input type="password" value={password} onChange={handlePasswordChange} placeholder="Password" required /><br></br>
       <button type="submit" className='submitButton'>Login</button>
+      <p>If you don't have account please <a href='/signup'><span className="submitButton">signup</span> </a></p>
+
     </form>
   </div>
   )
