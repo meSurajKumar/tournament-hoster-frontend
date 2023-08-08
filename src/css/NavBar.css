@@ -4,7 +4,7 @@
 }
 
 .containerClass {
-  background-color: orangered; /* Make the background transparent */
+  background-color: purple; /* Make the background transparent */
   color: orange;
   /* margin-left: 0%; */
 }
@@ -15,6 +15,7 @@ ul {
   padding: 0;
   display: flex;
   flex-direction: row;
+  
 }
 
 .navbar {

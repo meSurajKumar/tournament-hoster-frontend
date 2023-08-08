@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from 'react'
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import NavBar from './NavBar'
 import '../css/Home.css'
@@ -8,7 +9,7 @@ const baseUrl = import.meta.env.VITE_BASE_URL
 
 
 export default function Home() {
-
+  const navigate = useNavigate()
   const [data , setData] = useState([])
 
   useEffect(()=>{
@@ -23,16 +24,19 @@ export default function Home() {
     fetchData();
   },[])
 
-
-
-  // useEffect(async()=>{
-  //   await axios.get(`${baseUrl}/api/v1/admin/get-tournaments`)
-  //   .then(response=>response.data.data)
-  //   .then(data=>setData(data))
-  //   .catch(err=>console.log(`Error in api fetch ${err}`))
-  //   // .then(data=>{console.log('data :: ' , data)})
-  // } , [])
-
+  const handleItemClick = async(itemId)=>{
+    try {
+      const itemResponse = await axios.get((`${baseUrl}/api/v1/admin/get-tournament/${itemId}`)).then((response)=>{
+        navigate('/tournament')
+      }).catch((error)=>{
+        console.log('Error Data :: ' , error)
+      })
+      // const itemData = itemResponse.data.data
+      // console.log('itemData : ' , itemData)
+    } catch (error) {
+      console.log('failed to get item data : ' , error)
+    }
+  }
 
   return (
     <>
@@ -40,7 +44,7 @@ export default function Home() {
     <center>
         <div className='container'>
             {data.map((dataObj, index) => (
-                <p className='tileBody' key={index}>
+                <p className='tileBody' key={index} onClick={() => handleItemClick(dataObj._id)}>
                     <span className='neonText'>
                         {dataObj.name}
                         <br />
@@ -51,17 +55,5 @@ export default function Home() {
         </div>
     </center>
 </>
-
-  //   <>
-  //   <NavBar />
-  //   {data.length > 0 ? (
-  //     data.map((item) => <p key={item.id}>{item.name}</p>)
-  //   ) : (
-  //     <p>Loading data...</p>
-  //   )}
-  // </>
-
-
-
   )
 }
