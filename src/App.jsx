@@ -14,10 +14,10 @@ function App() {
       <Routes>
         {/* <Route path='/' element={<Signup/>}  /> */}
         <Route path='/' element={<Home/>}  />
-        <Route path='/home' element={<Home/>}  />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/signup' element={<Signup/>}/> 
-        <Route path='/tournament' element={<Tournament/>}/> 
+        <Route path='home' element={<Home/>}  />
+        <Route path='login' element={<Login/>} />
+        <Route path='signup' element={<Signup/>}/> 
+        <Route path='tournament' element={<Tournament/>}/> 
       </Routes>
       </BrowserRouter>
     </div>
