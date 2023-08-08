@@ -1,0 +1,35 @@
+.tileBody {
+  display: flex;
+  height: 110px;
+  width: 130px;
+  box-shadow: 6px 5px 9px -7px rgb(6, 211, 30);
+  background-color: coral;
+  flex-wrap: nowrap;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 3%;
+  justify-content: space-between;
+  /* background-color: orange; */
+  margin-top: 2%;
+  margin-left: 1%;
+}
+
+  .neonText {
+    color: #fff;
+    /* text-shadow: */
+      /* 0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #f09,
+      0 0 82px #f09,
+      0 0 92px #f09,
+      0 0 102px #f09,
+      0 0 151px #f09; */
+    font-family: "Vibur", sans-serif;
+
+
+  }

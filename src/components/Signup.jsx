@@ -58,6 +58,7 @@ export default function Signup() {
         </select>
         <button type='submit' className='submitButton'>Signup</button>
 
+        <p>If you have already an account please <a href='/login'><span className="submitButton">login</span> </a></p>
       </form>
 
     </div>

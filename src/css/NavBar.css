@@ -1,0 +1,26 @@
+.navBarStyle {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerClass {
+  background-color: purple; /* Make the background transparent */
+  color: orange;
+  /* margin-left: 0%; */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.navbar {
+  background-color:#00695c; /* Use rgba for transparent background with some opacity */
+  backdrop-filter: blur(10px); /* Add a blur effect to the background */
+  color: orange;
+  margin-left: 20px;
+}
