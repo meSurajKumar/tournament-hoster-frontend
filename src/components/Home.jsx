@@ -1,5 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import {setTournamentData} from '../states/actions/tournamentActions'
 import axios from 'axios'
 import NavBar from './NavBar'
 import '../css/Home.css'
@@ -10,6 +12,7 @@ const baseUrl = import.meta.env.VITE_BASE_URL
 
 export default function Home() {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [data , setData] = useState([])
 
   useEffect(()=>{
@@ -27,6 +30,8 @@ export default function Home() {
   const handleItemClick = async(itemId)=>{
     try {
       const itemResponse = await axios.get((`${baseUrl}/api/v1/admin/get-tournament/${itemId}`)).then((response)=>{
+        let responseData = response.data.data
+        dispatch(setTournamentData(responseData))
         navigate('/tournament')
       }).catch((error)=>{
         console.log('Error Data :: ' , error)
